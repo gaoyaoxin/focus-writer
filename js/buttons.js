@@ -56,6 +56,7 @@ function saveTextAsFile() {
     var cleanText = textToWrite.replace(/<br[^>]*>/gi, "\n");
     cleanText = cleanText.replace(/<p[^>]*>/gi, " ");
     cleanText = cleanText.replace(/&nbsp;/gi, '');
+    cleanText = cleanText.replace(/<\/p>/gm, '');
     textToWrite = cleanText;
     var textFileAsBlob = new Blob([textToWrite], {type: 'text/plain'});
     var fileNameToSaveAs = document.getElementById("title").innerHTML;
